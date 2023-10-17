@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Premier pas avec VUE.JS 3</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@3.3.4/dist/vue.global.min.js"></script>
+  </head>
+  <body>
+    <div class="app" id="app">
+      <h1>Hello {{prenom}} {{nom}}! {{addition}}</h1>
+  
+      <p>Téléphone: {{telephone}}</p>
+      <p>Jeux favoris: {{liste[0]}} {{liste[2]}}</p>
+      <p v-text="nom"></p>
+
+      <div v-html="contenu"></div>
+
+      <button v-on:click="changerPrenom()">Changez de prénom</button>
+
+      <button v-on:click="addition">Faire une addition</button>
+    </div>
+
+    <script>
+      const app = Vue.createApp({
+        /*  template: "<h1>Hello World!</h1>" */
+        data() {
+          return {
+            prenom: "Roxanne",
+            nom: "Perron",
+            telephone: "418-123-4567",
+            texteAddition:"",
+
+            /* personne:{
+                nom:"Perron",
+                prenom:"Rox",
+                telephone:4181234567
+
+            }, */
+
+            liste: ["TOTK", "KENA", "HORIZON", "BOTW"],
+
+            contenu: "<h1>Test V-HTML</h1>",
+          };
+        },
+        methods:{
+              changerPrenom(){
+                this.prenom="Alice";
+              },
+
+              addition(){
+              let nb1 = prompt("Entrez le premier nombre") 
+              let nb2 = prompt("Entrez le deuxième nombre") 
+              let a = parseInt(nb1)
+              let b = parseInt(nb2)
+              this.addition 
+              }
+            }
+      });
+      app.mount("#app");
+    </script>
+  </body>
+</html>
