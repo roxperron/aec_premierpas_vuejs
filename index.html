@@ -9,7 +9,7 @@
   <body>
     <div class="app" id="app">
       <h1>Hello {{prenom}} {{nom}}! {{addition}}</h1>
-  
+
       <p>Téléphone: {{telephone}}</p>
       <p>Jeux favoris: {{liste[0]}} {{liste[2]}}</p>
       <p v-text="nom"></p>
@@ -18,8 +18,18 @@
 
       <button v-on:click="changerPrenom()">Changez de prénom</button>
 
-      <button v-on:click="addition">Faire une addition</button>
+      <button v-on:click="addition">Faire une addition</button><br />
+
+      <button v-on:click="getNombre1">Nombre 1</button>
+      <button v-on:click="getNombre2">Nombre 2</button>
+      <h3>{{nbre1}} + {{nbre2}} = {{addition}}</h3>
+
+      <button @click="changerPrenom">Changez prénom</button><br>
+
+      <button v-on:click="getImage1">Cliquez pour Image 1</button>
+      <img v-bind:src="image" alt="texte">
     </div>
+
 
     <script>
       const app = Vue.createApp({
@@ -29,7 +39,7 @@
             prenom: "Roxanne",
             nom: "Perron",
             telephone: "418-123-4567",
-            texteAddition:"",
+            texteAddition: "",
 
             /* personne:{
                 nom:"Perron",
@@ -41,21 +51,56 @@
             liste: ["TOTK", "KENA", "HORIZON", "BOTW"],
 
             contenu: "<h1>Test V-HTML</h1>",
+            nbre1: 0,
+            nbre2: 0,
+
+            image:"https://plus.unsplash.com/premium_photo-1667608386999-bc20b98ef329?auto=format&fit=crop&q=80&w=986&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            texte:"Halloween1"
           };
         },
-        methods:{
-              changerPrenom(){
-                this.prenom="Alice";
-              },
+        methods: {
+          changerPrenom() {
+            this.prenom = prompt("Entrez le prenom")
+          },
 
-              addition(){
+          /*  addition(){
               let nb1 = prompt("Entrez le premier nombre") 
               let nb2 = prompt("Entrez le deuxième nombre") 
               let a = parseInt(nb1)
               let b = parseInt(nb2)
               this.addition 
               }
-            }
+               */
+          getNombre1() {
+            let a = prompt("Entrez nbre1");
+            this.nbre1 = parseInt(a);
+          },
+
+          getNombre2() {
+            let b = prompt("Entrez nbre2");
+            this.nbre2 = parseInt(b);
+          },
+
+          getImage1(){
+            this.image="https://images.unsplash.com/photo-1540427969750-1424f2fa0af8?auto=format&fit=crop&q=80&w=1064&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            this.texte = "Halloween2"
+          }
+        },
+
+        computed: {
+          addition() {
+            return this.nbre1 + this.nbre2;
+          }
+        },
+        watch:{
+          prenom:function(nouveauPrenom, ancienPrenom){
+              alert(`Vous avez remplacé ${ancienPrenom} par ${nouveauPrenom}`)
+           
+
+         
+          }
+            
+          }
       });
       app.mount("#app");
     </script>
