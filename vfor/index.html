@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/vue@3/dist/vue.global.min.js"></script>
+    <title>Exercice v-for</title>
+  </head>
+  <body>
+    <div id="app">
+      <h1>Exemple v-for, liste et tableau</h1>
+      <ul>
+        <li v-for="game in games">{{game}}</li>
+      </ul>
+
+      <h1>Exemple : Index</h1>
+      <ul>
+        <li v-for="(game, index) in games">Index {{index}} - {{game}}</li>
+      </ul>
+
+      <h1>Exemple : :key</h1>
+      <ul>
+        <li v-for="game in games" :key="game">{{game}}</li>
+      </ul>
+
+      <h1>Exemple : v-for, object,  clé & index</h1>
+
+      <ul>
+        <li v-for="(valeur, cle, index) in gamePrice">{{index}} - {{cle}}: {{valeur}}</li>
+      </ul>
+
+      <h1>Exemple : événement à chaque entrée</h1>
+
+      <div v-for="chars in characters" @click="selectCharacter(chars)">
+
+        {{chars.firstname}} {{chars.lastname}}
+
+      </div>
+      <h1>{{characterInEpisod}}</h1>
+
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>

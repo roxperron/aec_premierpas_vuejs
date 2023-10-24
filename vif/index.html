@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@3/dist/vue.global.min.js"></script>
+    <title>Exercice v-if</title>
+</head>
+<body>
+    <div id="app">
+        <h1>Conditionnal v-if, v-else & v-else-if</h1>
+        <h2 v-if="show">{{person.firstname}} {{person.lastname}}</h2>
+        <h2 v-else>No Character to show</h2>
+
+     <h2>This character is :</h2> 
+     <h2 v-if="age < 18">Minor</h2>
+     <h2 v-else-if="age >= 18">Adult</h2>
+       
+
+    <button @click="showPerson">Hide it</button>
+
+      <h1>Conditonnal v-show</h1>
+
+      <h2 v-show="show">{{person.firstname}} {{person.lastname}}</h2>
+      <button @click="showPerson">Show it</button>
+     
+      <h1>Conditonnal v-if & v-for</h1>
+      
+      <template v-for="character in characters">
+        <li v-if="character.type ==  'Demon slayer' ">
+            {{character.firstname}} {{character.lastname}} 
+        </li>
+
+      </template>
+
+
+    </div>
+    
+    <script src="app.js"></script>
+</body>
+</html>

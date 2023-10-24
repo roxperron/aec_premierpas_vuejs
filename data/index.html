@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@3/dist/vue.global.min.js"></script>
+    <title>DATA</title>
+</head>
+<body>
+
+    <div id="app">
+        <h1>DATA</h1>
+        <p>User name is:  {{myFirstName}}  {{myLastName}}  </p>
+        <p>User phonenumber is: {{cellphone}}</p>
+
+        <p>User favorites anime is:</p>
+        <p>{{anime[0]}}</p>
+        <p>{{anime[1]}}</p>
+        <p>{{anime[2]}}</p>
+        <p>{{anime[3]}}</p>
+
+        <h1>INSERTION JS</h1>
+
+        {{valide ? "OUI" : "NON"}} <br><br>
+        {{Math.random() * 10}} <br><br>
+        {{new Date().toLocaleString('fr-FR')}}
+
+
+
+
+    </div>
+    
+    <script src="app.js"></script>
+</body>
+</html>
