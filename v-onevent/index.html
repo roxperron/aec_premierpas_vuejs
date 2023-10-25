@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@3/dist/vue.global.min.js"></script>
+    <title>V-ON</title>
+</head>
+<body>
+    <div id="app">
+        <h1>V-ON</h1>
+        <h2>Hello {{characterName}}! You are {{characterRace}}.</h2>
+        <button v-on:click="characterName='Mipha'">Change the name</button> <br><br>
+
+        <button @click="characterRace='Zora'">Change the race</button>
+
+
+
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/vue@3/dist/vue.global.min.js"></script>
+    <title>METHODS</title>
+  </head>
+  <body>
+    <div id="app">
+      <h1>METHODS</h1>
+      <h2>Hello {{characterName}}! You are {{characterRace}}.</h2>
+
+      <button v-on:click="changeCharName">Change the name</button> <br />
+      <br />
+
+      <button v-on:click="changeCharRace">Change the race</button>
+
+      <h1>SUM METHODS</h1>
+      <h2>{{add}}</h2>
+      <button v-on:click="addSum">Sum</button>
+
+      <h1>ACCESS TO EVENT'S OBJECT</h1>
+      <h1 :id="nameChar" @click="action($event, 'Demon Slayer')">{{character.name}}</h1>
+   
+
+
+
+
+
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>
