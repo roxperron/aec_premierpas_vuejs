@@ -5,14 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <script src="https://cdn.jsdelivr.net/npm/vue@3/dist/vue.global.min.js"></script>
-    <title>Document</title>
+    <title>Watcher</title>
 </head>
 <body>
     <div id="app">
-        <h1>COMPUTED</h1>
-        <button v-on:click="getNb1">Nb1</button><br><br>
-        <button v-on:click="getNb2">Nb2</button>
-        <h2>{{nb1}} + {{nb2}} = {{addition}}</h2>
+        <h1>Watcher</h1>
+        <h2>{{userName}} {{userType}}</h2>
+        <button @click="changeUserName">Changez le nom</button>
+
 
     </div>
     <script src="app.js"></script>

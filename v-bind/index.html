@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/vue@3/dist/vue.global.min.js"></script>
+    <title>V-Bind</title>
+  </head>
+  <body>
+    <div id="app">
+      <h1>V-BIND</h1>
+      <button @click="getFirstImg">Image 1</button> <br><br>
+      <button @click="getSecondImg">Image 2</button>
+      <div>
+        <img v-bind:src="image" :alt="texte" />
+        <p>{{texte}}</p>
+      </div>
+
+      <h1>V-BIND  & CSS CLASS</h1>
+      <h2 :class="{texteVert : character.isDemonSlayer}">
+        {{character.firstName}} {{character.lastName}}
+      </h2>
+
+      <h2 :class="characterClass"> {{character.firstName}} {{character.lastName}}</h2>
+    
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>

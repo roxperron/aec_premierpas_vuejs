@@ -4,7 +4,7 @@ const app = Vue.createApp({
       characterName: "Link",
       characterRace: "Hylian",
       add: "",
-      character:{
+      demon:{
         name: "Nezoku", type:"demon", present: true, age: 13, membre:true
       }
     };
